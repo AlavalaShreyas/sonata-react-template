@@ -1,5 +1,6 @@
 import React, { Component, Fragment, Children, cloneElement } from "react";
 
+// this is accordion class
 class Accordion extends Component {
    state = {
       selectedAccordionItem: -1
