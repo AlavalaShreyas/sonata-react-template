@@ -1,8 +1,7 @@
 // import external modules
-import React, {Component, Fragment } from "react";
+import React, { Component, Fragment } from "react";
 import { Row, Col, Card, CardTitle, CardHeader, CardBody } from "reactstrap";
-import { Bar, Line, Scatter, Radar, Pie, Polar, Doughnut } from "react-chartjs-2";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 
 import {
    BarData,
@@ -15,13 +14,11 @@ import {
    PolarData
 } from "./chartData";
 
-//Prism
-// eslint-disable-next-line
 import Prism from "prismjs";  //Include JS
 import "prismjs/themes/prism-okaidia.css"; //Include CSS
 import { PrismCode } from "react-prism"; //Prism Component
 
-
+import { ChartLib } from "react-sonata-components-library";
 
 // Import Example Source Code
 import barcharts from "../example-source/barchart";
@@ -34,173 +31,168 @@ class ChartJS extends Component {
    render() {
       return (
          <Fragment>
-               <Row className="row-eq-height">
-                  <Col sm="12">
-                     <Card>
-                        <CardBody>
-                           <CardTitle>Charts Design</CardTitle>
-                           
-                           <Col md="12" lg="6" className="leftDiv">
-                              <Col md="12" lg="12" className="leftDiv">
-                                 <Bar height={400} data={BarData.data} options={BarData.options} />                                         
-                              </Col>  
-                              <Col md="12" lg="12" className="leftDiv">
-                                 <div className="">
-                                    <div className="installation">Installation</div>                     
-                                    <Col md="12" className="leftDiv">
-                                       <div className="installation-steps">
-                                          <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                          <div className="installation-box">
-                                             <div>npm install react-chartjs-2 chart.js --save</div>
-                                             <div>npm install --save reactstrap react react-dom</div>
-                                          </div>
+            <Row className="row-eq-height">
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        <CardTitle>Bar Design</CardTitle>
+                        <Col md="12" lg="6" className="leftDiv">
+                           <ChartLib type='bar' details={BarData} />
+                           <Col md="12" lg="12" className="leftDiv">
+                              <div className="">
+                                 <div className="installation">Installation</div>
+                                 <Col md="12" className="leftDiv">
+                                    <div className="installation-steps">
+                                       <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                       <div className="installation-box">
+                                          <div>npm install react-sonata-components-library</div>
+                                          <div>import{" { ChartLib } " }from "react-sonata-components-library";</div>
                                        </div>
-                                    </Col>
-                                 </div>                                      
-                              </Col>                                                         
-                           </Col>  
-                           <Col md="12" lg="6" className="rightDiv">
-                                 <CopyToClipboard text={barcharts}
-                                    onCopy={() => this.setState({copied: true})}>
-                                    <span className="copy-code">Copy Code</span>
-                                 </CopyToClipboard>
-                                 <PrismCode
-                                    component="pre"
-                                    className="language-javascript"
-                                 >
-                                    {barcharts}
-                                 </PrismCode>                     
+                                    </div>
+                                 </Col>
+                              </div>
                            </Col>
-                        </CardBody>
-                     </Card>
-                  </Col>
-               </Row>
-               <Row className="row-eq-height">
-                  <Col sm="12">
-                     <Card>
-                        <CardBody>
-                           <CardTitle>LINE Charts</CardTitle>
-                           
-                           <Col md="12" lg="6" className="leftDiv">
-                              <Col md="12" lg="12" className="leftDiv">
-                                 <Line height={400} data={LineChartData.data} options={LineChartData.options} />                                       
-                              </Col>  
-                              <Col md="12" lg="12" className="leftDiv">
-                                 <div className="">
-                                    <div className="installation">Installation</div>                     
-                                    <Col md="12" className="leftDiv">
-                                       <div className="installation-steps">
-                                          <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                          <div className="installation-box">
-                                             <div>npm install react-chartjs-2 chart.js --save</div>
-                                             <div>npm install --save reactstrap react react-dom</div>
-                                          </div>
-                                       </div>
-                                    </Col>
-                                 </div>                                      
-                              </Col>                                                         
-                           </Col>  
-                           <Col md="12" lg="6" className="rightDiv">
-                                 <CopyToClipboard text={linechart}
-                                    onCopy={() => this.setState({copied: true})}>
-                                    <span className="copy-code">Copy Code</span>
-                                 </CopyToClipboard>
-                                 <PrismCode
-                                    component="pre"
-                                    className="language-javascript"
-                                 >
-                                    {linechart}
-                                 </PrismCode>                     
-                           </Col>
-                        </CardBody>
-                     </Card>
-                  </Col>
-               </Row>
-               <Row className="row-eq-height">
-                  <Col sm="12">
-                     <Card>
-                        <CardBody>
-                           <CardTitle>LINE AREA Charts</CardTitle>
-                           
-                           <Col md="12" lg="6" className="leftDiv">
-                              <Col md="12" lg="12" className="leftDiv">
-                                 <Line height={400} data={AreaChartdata.data} options={AreaChartdata.options} />                                        
-                              </Col>  
-                              <Col md="12" lg="12" className="leftDiv">
-                                 <div className="">
-                                    <div className="installation">Installation</div>                     
-                                    <Col md="12" className="leftDiv">
-                                       <div className="installation-steps">
-                                          <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                          <div className="installation-box">
-                                             <div>npm install react-chartjs-2 chart.js --save</div>
-                                             <div>npm install --save reactstrap react react-dom</div>
-                                          </div>
-                                       </div>
-                                    </Col>
-                                 </div>                                      
-                              </Col>                                                         
-                           </Col>  
-                           <Col md="12" lg="6" className="rightDiv">
-                                 <CopyToClipboard text={lineareachart}
-                                    onCopy={() => this.setState({copied: true})}>
-                                    <span className="copy-code">Copy Code</span>
-                                 </CopyToClipboard>
-                                 <PrismCode
-                                    component="pre"
-                                    className="language-javascript"
-                                 >
-                                    {lineareachart}
-                                 </PrismCode>                     
-                           </Col>
-                        </CardBody>
-                     </Card>
-                  </Col>
-               </Row>
-               <Row className="row-eq-height">
-                  <Col sm="12">
-                     <Card>
-                        <CardBody>
-                           <CardTitle>PIE Charts</CardTitle>
-                           
-                           <Col md="12" lg="6" className="leftDiv">
-                              <Col md="12" lg="12" className="leftDiv">
-                              <Pie height={400} data={PieData.data} options={PieData.options} />                                      
-                              </Col>  
-                              <Col md="12" lg="12" className="leftDiv">
-                                 <div className="">
-                                    <div className="installation">Installation</div>                     
-                                    <Col md="12" className="leftDiv">
-                                       <div className="installation-steps">
-                                          <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                          <div className="installation-box">
-                                             <div>npm install react-chartjs-2 chart.js --save</div>
-                                             <div>npm install --save reactstrap react react-dom</div>
-                                          </div>
-                                       </div>
-                                    </Col>
-                                 </div>                                      
-                              </Col>                                                         
-                           </Col>  
-                           <Col md="12" lg="6" className="rightDiv">
-                                 <CopyToClipboard text={piecharts}
-                                    onCopy={() => this.setState({copied: true})}>
-                                    <span className="copy-code">Copy Code</span>
-                                 </CopyToClipboard>
-                                 <PrismCode
-                                    component="pre"
-                                    className="language-javascript"
-                                 >
-                                    {piecharts}
-                                 </PrismCode>                     
-                           </Col>
-                        </CardBody>
-                     </Card>
-                  </Col>
-               </Row>
-            
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={barcharts}
+                              onCopy={() => this.setState({ copied: true })}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                           <PrismCode
+                              component="pre"
+                              className="language-javascript"
+                           >
+                              {barcharts}
+                           </PrismCode>
+                        </Col>
+                     </CardBody>
+                  </Card>
+               </Col>
+            </Row>
+            <Row className="row-eq-height">
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        <CardTitle>LINE Charts</CardTitle>
 
-               {/*
+                        <Col md="12" lg="6" className="leftDiv">
+                           <ChartLib type='line' details={LineChartData} />
+                           <Col md="12" lg="12" className="leftDiv">
+                              <div className="">
+                                 <div className="installation">Installation</div>
+                                 <Col md="12" className="leftDiv">
+                                    <div className="installation-steps">
+                                       <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                       <div className="installation-box">
+                                          <div>npm install react-sonata-components-library</div>
+                                          <div>import{" { ChartLib } " }from "react-sonata-components-library";</div>
+                                       </div>
+                                    </div>
+                                 </Col>
+                              </div>
+                           </Col>
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={linechart}
+                              onCopy={() => this.setState({ copied: true })}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                           <PrismCode
+                              component="pre"
+                              className="language-javascript"
+                           >
+                              {linechart}
+                           </PrismCode>
+                        </Col>
+                     </CardBody>
+                  </Card>
+               </Col>
+            </Row>
+            <Row className="row-eq-height">
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        <CardTitle>LINE AREA Charts</CardTitle>
+
+                        <Col md="12" lg="6" className="leftDiv">
+                           <Col md="12" lg="12" className="leftDiv">
+                              <ChartLib height={400}  type = 'lineArea' details={AreaChartdata}/>
+                           </Col>
+                           <Col md="12" lg="12" className="leftDiv">
+                              <div className="">
+                                 <div className="installation">Installation</div>
+                                 <Col md="12" className="leftDiv">
+                                    <div className="installation-steps">
+                                       <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                       <div className="installation-box">
+                                          <div>npm install react-sonata-components-library</div>
+                                          <div>import{" { ChartLib } " }from "react-sonata-components-library";</div>
+                                       </div>
+                                    </div>
+                                 </Col>
+                              </div>
+                           </Col>
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={lineareachart}
+                              onCopy={() => this.setState({ copied: true })}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                           <PrismCode
+                              component="pre"
+                              className="language-javascript"
+                           >
+                              {lineareachart}
+                           </PrismCode>
+                        </Col>
+                     </CardBody>
+                  </Card>
+               </Col>
+            </Row>
+            <Row className="row-eq-height">
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        <CardTitle>PIE Charts</CardTitle>
+
+                        <Col md="12" lg="6" className="leftDiv">
+                           <Col md="12" lg="12" className="leftDiv">
+                              <ChartLib height={400} details={PieData} type='pie' />
+                           </Col>
+                           <Col md="12" lg="12" className="leftDiv">
+                              <div className="">
+                                 <div className="installation">Installation</div>
+                                 <Col md="12" className="leftDiv">
+                                    <div className="installation-steps">
+                                       <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                       <div className="installation-box">
+                                          <div>npm install react-sonata-components-library</div>
+                                          <div>import{" { ChartLib } " } from "react-sonata-components-library";</div>
+                                       </div>
+                                    </div>
+                                 </Col>
+                              </div>
+                           </Col>
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={piecharts}
+                              onCopy={() => this.setState({ copied: true })}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                           <PrismCode
+                              component="pre"
+                              className="language-javascript"
+                           >
+                              {piecharts}
+                           </PrismCode>
+                        </Col>
+                     </CardBody>
+                  </Card>
+               </Col>
+            </Row>
+
+
+            {/*
                   <Col sm="12">
                      <Card>
                         <CardHeader>
@@ -248,9 +240,9 @@ class ChartJS extends Component {
                      </Card>
                   </Col>
                </Row> */}
-            </Fragment>
-   );
-}
+         </Fragment>
+      );
+   }
 }
 
 export default ChartJS;
