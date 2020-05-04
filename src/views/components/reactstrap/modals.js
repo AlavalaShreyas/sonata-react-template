@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from "react";
 import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
-import {CopyToClipboard} from 'react-copy-to-clipboard';
+import { CopyToClipboard } from "react-copy-to-clipboard";
 //Prism
 // eslint-disable-next-line
 import Prism from "prismjs"; //Include JS
@@ -22,53 +22,67 @@ import ModalWithoutFade from "./examples/modalWithoutFade";
 
 // Import Example Source Code
 import ModalDefaultSource from "./exampleSource/modal";
+import ModalComponentSource from "./exampleSource/modalcomponent";
 import ModalNoBackdropSource from "./exampleSource/modalNoBackdrop";
 import ModalStaticBackdropSource from "./exampleSource/modalStaticBackdrop";
 import ModalNestedSource from "./exampleSource/modalNested";
 import ModalExternalButtonSource from "./exampleSource/modalExternalButton";
 import ModalWithoutFadeSource from "./exampleSource/modalWithoutFade";
+import { ModalComponent } from "react-sonata-components-library";
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 class Modals extends Component {
-   render() {
-      return (
-         <Fragment>
-            <Row>
-            <Col md="12" lg="12">
-               <Card>
-                  <CardBody>
-                     <CardTitle>Modal</CardTitle>
-                     <Col md="12" lg="6" className="leftDiv">
-                        <ModalDefault />
-                        <div className="">
-                           <div className="installation">Installation</div>                     
-                           <Col md="12" className="leftDiv">
-                              <div className="installation-steps">
-                                 <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                 <div className="installation-box">npm install --save reactstrap react react-dom</div>
-                              </div>
-                           </Col>
+  render() {
+    return (
+      <Fragment>
+        <Row>
+          <Col md="12" lg="12">
+            <Card>
+              <CardBody>
+                <LiveProvider
+                  code={ModalComponentSource}
+                  scope={{
+                    ModalComponent,
+                  }}
+                >
+                  <CardTitle>Modal</CardTitle>
+                  <Col md="12" lg="6" className="leftDiv">
+                    <LivePreview />
+                    <div className="">
+                      <div className="installation">Installation</div>
+                      <Col md="12" className="leftDiv">
+                        <div className="installation-steps">
+                          <div className="installation-text">
+                            Download and install the package. Use Node.js v8.0.0
+                            or later.
+                          </div>
+                          <div className="installation-box">
+                            npm install --save react-sonata-components-library
+                          </div>
+                          <div className="installation-box">
+                            import {"{ ModalComponent }"} from
+                            "react-sonata-components-library";
+                          </div>
                         </div>
-                     </Col>
-                     <Col md="12" lg="6" className="rightDiv">
-                        <CopyToClipboard text={ModalDefaultSource}
-                           onCopy={() => this.setState({copied: true})}>
-                           <span className="copy-code">Copy Code</span>
-                        </CopyToClipboard>
-                        <PrismCode
-                           component="pre"
-                           className="language-javascript"
-                        >
-                           {ModalDefaultSource}
-                        </PrismCode>
-                        
-                     </Col>
-                     
-                  </CardBody>
-               </Card>
-            </Col>
-            
-         </Row>
-            {/* <ContentHeader>Modals</ContentHeader>
+                      </Col>
+                    </div>
+                  </Col>
+                  <Col md="12" lg="6" className="rightDiv">
+                    <CopyToClipboard
+                      text={ModalComponentSource}
+                      onCopy={() => this.setState({ copied: true })}
+                    >
+                      <span className="copy-code">Copy Code</span>
+                    </CopyToClipboard>
+
+                    <LiveEditor style={{ background: "#272822" }} />
+                  </Col>
+                </LiveProvider>
+              </CardBody>
+            </Card>
+          </Col>
+        </Row>
+        {/* <ContentHeader>Modals</ContentHeader>
             <ContentSubHeader>Modals React Component.</ContentSubHeader>
             <Row>
                <Col sm="12" md="6">
@@ -195,9 +209,9 @@ class Modals extends Component {
                   </Card>
                </Col>
             </Row> */}
-         </Fragment>
-      );
-   }
+      </Fragment>
+    );
+  }
 }
 
 export default Modals;
