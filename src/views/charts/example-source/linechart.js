@@ -1,6 +1,6 @@
 const linechart = `
 import React, { Fragment } from "react";
-import { Row, Col, Card, CardTitle, CardHeader, CardBody } from "reactstrap";
+import { Row } from "reactstrap";
 import { Bar, Line, Scatter, Radar, Pie, Polar, Doughnut } from "react-chartjs-2";
 
 import {
@@ -9,13 +9,8 @@ import {
 
 const ChartJS = props => (
    <Fragment>
-    
       <Row>
-
-         <Col md="12" lg="12" className="leftDiv">
-         <Line height={400} data={LineChartData.data} options={LineChartData.options} />
-         </Col>
-        
+         <ChartLib type='line' details={LineChartData} />
       </Row>
    </Fragment>
 );
