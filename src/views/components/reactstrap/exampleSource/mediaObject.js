@@ -11,7 +11,7 @@ class MediaObject extends React.Component {
                <Media left href="#">
                   <Media
                      object
-                     src=""
+                     src="https://blog.testlodge.com/wp-content/uploads/2015/11/writting_test_cases_in_software_testing_with_sample-815x428.png"
                      alt="Generic placeholder image"
                      width="60"
                   />
@@ -30,7 +30,7 @@ class MediaObject extends React.Component {
                <Media left href="#">
                   <Media
                      object
-                     src=""
+                     src="https://blog.testlodge.com/wp-content/uploads/2015/11/writting_test_cases_in_software_testing_with_sample-815x428.png"
                      alt="Generic placeholder image"
                      width="60"
                   />
@@ -49,7 +49,7 @@ class MediaObject extends React.Component {
                <Media left href="#">
                   <Media
                      object
-                     src=""
+                     src="https://blog.testlodge.com/wp-content/uploads/2015/11/writting_test_cases_in_software_testing_with_sample-815x428.png"
                      alt="Generic placeholder image"
                      width="60"
                   />
