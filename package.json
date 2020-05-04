@@ -53,7 +53,7 @@
     "uuid": "^3.3.2",
     "yup": "^0.26.6",
     "react-live": "^2.2.2",
-    "react-sonata-components-library": "1.0.3"
+    "react-sonata-components-library": "1.0.4"
   },
   "scripts": {
     "start": "react-scripts start",

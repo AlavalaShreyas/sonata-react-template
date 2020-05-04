@@ -1,7 +1,7 @@
 const piecharts = `
 import React, { Fragment } from "react";
-import { Row, Col, Card, CardTitle, CardHeader, CardBody } from "reactstrap";
-import { Bar, Line, Scatter, Radar, Pie, Polar, Doughnut } from "react-chartjs-2";
+import { Row } from "reactstrap";
+import { ChartLib } from "react-sonata-components-library";
 
 import {
     PieData
@@ -9,13 +9,8 @@ import {
 
 const ChartJS = props => (
    <Fragment>
-    
       <Row>
-
-         <Col md="12" lg="12" className="leftDiv">
-         <Pie height={400} data={PieData.data} options={PieData.options} /> 
-         </Col>
-        
+        <ChartLib type = 'pie' details = {PieData} />
       </Row>
    </Fragment>
 );
