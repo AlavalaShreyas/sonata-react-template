@@ -1,18 +1,21 @@
 import React, { Fragment } from "react";
 import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 //Prism
 // eslint-disable-next-line
 import Prism from "prismjs";  //Include JS
 import "prismjs/themes/prism-okaidia.css"; //Include CSS
-import { PrismCode } from "react-prism"; //Prism Component
+import { PrismCode } from "react-prism"; //Prism Component;
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import { Media } from 'reactstrap';
 
 import CustomTabs from "../../../components/tabs/customTabs";
 import ContentHeader from "../../../components/contentHead/contentHeader";
 import ContentSubHeader from "../../../components/contentHead/contentSubHeader";
 
 // Import examples
-import MediaObject from "./examples/mediaObject";
+import {MediaDescription} from 'react-sonata-components-library'
 import MediaObjectRound from "./examples/mediaObjectRound";
 import MediaObjectBordered from "./examples/mediaObjectBordered";
 import MediaObjectNesting from "./examples/mediaObjectNesting";
@@ -35,33 +38,50 @@ export default () => {
             <Col md="12" lg="12">
                <Card>
                   <CardBody>
+                  <LiveProvider
+                  code={MediaObjectSource}
+                  scope={{
+                     MediaDescription, Media 
+                  }}
+                >
                      <CardTitle>Media Object</CardTitle>
                      <Col md="12" lg="6" className="leftDiv">
-                        <MediaObject />
-                        <div className="">
-                           <div className="installation">Installation</div>                     
-                           <Col md="12" className="leftDiv">
-                              <div className="installation-steps">
-                                 <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                 <div className="installation-box">npm install --save reactstrap react react-dom</div>
-                              </div>
-                           </Col>
+                     <LiveError />
+                     {/* <MediaObject  mediaItems={mediaItems} /> */}
+                     <LivePreview />
+                     <div className="">
+                      <div className="installation">Installation</div>
+                      <Col md="12" className="leftDiv">
+                        <div className="installation-steps">
+                          <div className="installation-text">
+                            Download and install the package. Use Node.js v8.0.0
+                            or later.
+                          </div>
+                          <div className="installation-box">
+                            npm install --save react-sonata-components-library
+                          </div>
+                          <div className="installation-box">
+                            import {"{ MediaDescription }"} from
+                            "react-sonata-components-library";
+                          </div>
                         </div>
+                      </Col>
+                    </div>
                      </Col>
                      <Col md="12" lg="6" className="rightDiv">
                         <CopyToClipboard text={MediaObjectSource}
                            onCopy={() => this.setState({copied: true})}>
                            <span className="copy-code">Copy Code</span>
                         </CopyToClipboard>
-                        <PrismCode
+                        {/* <PrismCode
                            component="pre"
                            className="language-javascript"
                         >
                            {MediaObjectSource}
-                        </PrismCode>
-                        
+                        </PrismCode> */}
+                        <LiveEditor style={{ background: "#272822" }} />
                      </Col>
-                     
+                     </LiveProvider>
                   </CardBody>
                </Card>
             </Col>
