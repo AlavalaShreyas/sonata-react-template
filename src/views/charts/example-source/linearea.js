@@ -1,21 +1,16 @@
 const lineareachart = `
 import React, { Fragment } from "react";
-import { Row, Col, Card, CardTitle, CardHeader, CardBody } from "reactstrap";
-import { Bar, Line, Scatter, Radar, Pie, Polar, Doughnut } from "react-chartjs-2";
+import { Row } from "reactstrap";
+import { ChartLib } from "react-sonata-components-library";
 
 import {
     AreaChartdata
 } from "./chartData";
 
 const ChartJS = props => (
-   <Fragment>
-    
+   <Fragment>    
       <Row>
-
-         <Col md="12" lg="12" className="leftDiv">
-            <Line height={400} data={AreaChartdata.data} options={AreaChartdata.options} /> 
-         </Col>
-        
+         <ChartLib height={400} details={AreaChartdata} type='linArea' /> 
       </Row>
    </Fragment>
 );
