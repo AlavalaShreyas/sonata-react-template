@@ -1,11 +1,9 @@
-const MediaObjectSource = `import React, { Component } from "react";
-import { Media } from 'reactstrap';
+const MediaObjectSource = `
+//import React, { Component } from "react";
+//import { Media } from 'reactstrap';
 
-import avatarImg1 from "../../../../assets/img/portrait/small/avatar-s-18.png";
-import avatarImg2 from "../../../../assets/img/portrait/small/avatar-s-7.png";
-import avatarImg3 from "../../../../assets/img/portrait/small/avatar-s-13.png";
 
-class MediaObject extends Component {
+class MediaObject extends React.Component {
    render() {
       return (
          <div>
@@ -13,7 +11,7 @@ class MediaObject extends Component {
                <Media left href="#">
                   <Media
                      object
-                     src={avatarImg1}
+                     src=""
                      alt="Generic placeholder image"
                      width="60"
                   />
@@ -32,7 +30,7 @@ class MediaObject extends Component {
                <Media left href="#">
                   <Media
                      object
-                     src={avatarImg2}
+                     src=""
                      alt="Generic placeholder image"
                      width="60"
                   />
@@ -51,7 +49,7 @@ class MediaObject extends Component {
                <Media left href="#">
                   <Media
                      object
-                     src={avatarImg3}
+                     src=""
                      alt="Generic placeholder image"
                      width="60"
                   />
@@ -69,7 +67,6 @@ class MediaObject extends Component {
       );
    }
 }
-
-export default MediaObject;`;
+`;
 
 export default MediaObjectSource;
