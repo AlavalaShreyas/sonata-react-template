@@ -7,7 +7,7 @@ import { MoreVertical } from 'react-feather';
 import UserImg from "../../assets/img/portrait/small/avatar-s-1.png";
 
 // import PropTypes from 'prop-types'
-// import { AlertOctagon, Trash2 } from "react-feather";
+// import { AlertOctagon, Trash2 } from "react-feather"
 
 class ChatContent extends Component {
     
