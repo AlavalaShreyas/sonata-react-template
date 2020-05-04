@@ -12,8 +12,8 @@ import ContentHeader from "../../../components/contentHead/contentHeader";
 import ContentSubHeader from "../../../components/contentHead/contentSubHeader";
 
 // Import examples
-import SelectSingle from "./examples/selectSingle";
-import SelectMulti from "./examples/selectMulti";
+import { SingleSelect } from 'react-sonata-components-library';
+import { MultiSelect } from 'react-sonata-components-library';
 import SelectGrouped from "./examples/selectGrouped";
 import SelectAnimated from "./examples/selectAnimated";
 
@@ -22,6 +22,9 @@ import SelectSingleSource from "./exampleSource/selectSingle";
 import SelectMultiSource from "./exampleSource/selectMulti";
 import SelectGroupedSource from "./exampleSource/selectGrouped";
 import SelectAnimatedSource from "./exampleSource/selectAnimated";
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import Select from "react-select";
+
 
 class Selects extends Component {
    render() {
@@ -30,18 +33,23 @@ class Selects extends Component {
             <Row>
                <Col md="12" lg="12">
                   <Card>
-                     <CardBody>
+                  <CardBody>
                         <CardTitle>Select Single</CardTitle>
+						<LiveProvider 
+						  code={SelectSingleSource}
+					      scope={{SingleSelect,Select}}
+                        >
                         <Col md="12" lg="6" className="leftDiv">
-                           <SelectSingle />
+                          <LivePreview />
+							  <LiveError />
                            <div className="">
                               <div className="installation">Installation</div>                     
                               <Col md="12" className="leftDiv">
                                  <div className="installation-steps">
                                     <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                    <div className="installation-box">npm install --save reactstrap react react-dom
+                                    <div className="installation-box">npm i react-sonata-components-library
                                     <br/>
-                                       npm install react-select
+                                     import { SingleSelect } from 'react-sonata-components-library'
                                     </div>
                                  </div>
                               </Col>
@@ -52,15 +60,12 @@ class Selects extends Component {
                               onCopy={() => this.setState({copied: true})}>
                               <span className="copy-code">Copy Code</span>
                            </CopyToClipboard>
-                           <PrismCode
-                              component="pre"
-                              className="language-javascript"
-                           >
-                              {SelectSingleSource}
-                           </PrismCode>
+                          <div style={{backgroundColor : '#000000'}}>
+                                 <LiveEditor />
+                            </div>  
                            
                         </Col>
-                        
+                        </LiveProvider>
                      </CardBody>
                   </Card>
                </Col>               
@@ -69,17 +74,22 @@ class Selects extends Component {
                <Col md="12" lg="12">
                   <Card>
                      <CardBody>
-                        <CardTitle>Select Single</CardTitle>
+                        <CardTitle>Multi Select</CardTitle>
+                        <LiveProvider 
+						  code={SelectMultiSource}
+					      scope={{MultiSelect,Select}}
+                        >
                         <Col md="12" lg="6" className="leftDiv">
-                           <SelectMulti />
+                        <LivePreview />
+							  <LiveError />
                            <div className="">
                               <div className="installation">Installation</div>                     
                               <Col md="12" className="leftDiv">
                                  <div className="installation-steps">
                                     <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                    <div className="installation-box">npm install --save reactstrap react react-dom
+                                    <div className="installation-box">npm i react-sonata-components-library
                                        <br/>
-                                       npm install react-select
+                                       import { MultiSelect } from 'react-sonata-components-library'
                                     </div>
                                  </div>
                               </Col>
@@ -90,15 +100,12 @@ class Selects extends Component {
                               onCopy={() => this.setState({copied: true})}>
                               <span className="copy-code">Copy Code</span>
                            </CopyToClipboard>
-                           <PrismCode
-                              component="pre"
-                              className="language-javascript"
-                           >
-                              {SelectMultiSource}
-                           </PrismCode>
+                           <div style={{backgroundColor : '#000000'}}>
+                                 <LiveEditor />
+                            </div>
                            
                         </Col>
-                        
+                        </LiveProvider>
                      </CardBody>
                   </Card>
                </Col>               
