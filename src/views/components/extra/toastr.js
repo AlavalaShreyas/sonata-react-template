@@ -22,6 +22,8 @@ import ToastrTransitions from "./examples/toastrTransitions";
 import ToastrTypesSource from "./exampleSource/toastrTypes";
 import ToastrPositionsSource from "./exampleSource/toastrPositions";
 import ToastrTransitionsSource from "./exampleSource/toastrTransitions";
+import {Toaster} from 'react-sonata-components-library';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
 class Toastr extends Component {
 
@@ -32,35 +34,46 @@ class Toastr extends Component {
                <Col md="12" lg="12">
                   <Card>
                      <CardBody>
-                        <CardTitle>Positions</CardTitle>
-                        <Col md="12" lg="6" className="leftDiv">
-                           <ToastrPositions />
-                           <div className="">
-                              <div className="installation">Installation</div>                     
-                              <Col md="12" className="leftDiv">
-                                 <div className="installation-steps">
-                                    <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
-                                    <div className="installation-box">npm install --save reactstrap react react-dom
-                                       <br/>
-                                       npm install react-redux-toastr
-                                    </div>
-                                 </div>
-                              </Col>
-                           </div>
-                        </Col>
-                        <Col md="12" lg="6" className="rightDiv">
-                           <CopyToClipboard text={ToastrPositionsSource}
-                              onCopy={() => this.setState({copied: true})}>
-                              <span className="copy-code">Copy Code</span>
-                           </CopyToClipboard>
-                           <PrismCode
-                              component="pre"
-                              className="language-javascript"
-                           >
-                              {ToastrPositionsSource}
-                           </PrismCode>
-                           
-                        </Col>
+                     <LiveProvider
+                        code={ToastrPositionsSource}
+                        scope={{
+                           Toaster,
+                        }}
+                     >
+                  <CardTitle>Toaster</CardTitle>
+                  <Col md="12" lg="6" className="leftDiv">
+                    <LivePreview />
+                    <LiveError />
+                    <div className="">
+                      <div className="installation">Installation</div>
+                      <Col md="12" className="leftDiv">
+                        <div className="installation-steps">
+                          <div className="installation-text">
+                            Download and install the package. Use Node.js v8.0.0
+                            or later.
+                          </div>
+                          <div className="installation-box">
+                            npm install --save react-sonata-components-library
+                          </div>
+                          <div className="installation-box">
+                            import {"{ Toaster }"} from
+                            "react-sonata-components-library";
+                          </div>
+                        </div>
+                      </Col>
+                    </div>
+                  </Col>
+                  <Col md="12" lg="6" className="rightDiv">
+                    <CopyToClipboard
+                      text={ToastrPositionsSource}
+                      onCopy={() => this.setState({ copied: true })}
+                    >
+                      <span className="copy-code">Copy Code</span>
+                    </CopyToClipboard>
+
+                    <LiveEditor style={{ background: "#272822" }} />
+                  </Col>
+                </LiveProvider>
                         
                      </CardBody>
                   </Card>
