@@ -40,20 +40,27 @@ class TooltipExampleMulti extends React.Component {
                      >
                         <CardTitle>Tooltips</CardTitle>
                         <Col md="12" lg="6" className="leftDiv">
-                        <LiveError />
-                        <LivePreview />
-                        {/* <CustomTabs
-                           TabContent1={<TooltipMulti />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {TooltipsDefaultSource}
-                              </PrismCode>
-                           }
-                        /> */}
-                        </Col>
+                           <LiveError />
+                           <LivePreview />
+                           <div className="">
+                           <div className="installation">Installation</div>
+                           <Col md="12" className="leftDiv">
+                              <div className="installation-steps">
+                              <div className="installation-text">
+                                 Download and install the package. Use Node.js v8.0.0
+                                 or later.
+                              </div>
+                              <div className="installation-box">
+                                 npm install --save react-sonata-components-library
+                              </div>
+                              <div className="installation-box">
+                                 import {"{ MediaDescription }"} from
+                                 "react-sonata-components-library";
+                              </div>
+                              </div>
+                           </Col>
+                        </div>
+                     </Col>
                         <Col md="12" lg="6" className="rightDiv">
                         <CopyToClipboard text={TooltipsDefaultSource}
                            onCopy={() => this.setState({copied: true})}>
@@ -85,20 +92,27 @@ class TooltipExampleMulti extends React.Component {
                      >
                         <CardTitle>UncontrolledTooltip</CardTitle>
                         <Col md="12" lg="6" className="leftDiv">
-                        <LiveError />
-                        <LivePreview />
-                        {/* <CustomTabs
-                           TabContent1={ <TooltipUncontrolled />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {TooltipsUncontrolledSource}
-                              </PrismCode>
-                           }
-                        /> */}
-                        </Col>
+                           <LiveError />
+                           <LivePreview />
+                           <div className="">
+                           <div className="installation">Installation</div>
+                           <Col md="12" className="leftDiv">
+                              <div className="installation-steps">
+                              <div className="installation-text">
+                                 Download and install the package. Use Node.js v8.0.0
+                                 or later.
+                              </div>
+                              <div className="installation-box">
+                                 npm install --save react-sonata-components-library
+                              </div>
+                              <div className="installation-box">
+                                 import {"{ MediaDescription }"} from
+                                 "react-sonata-components-library";
+                              </div>
+                              </div>
+                           </Col>
+                        </div>
+                     </Col>
                         <Col md="12" lg="6" className="rightDiv">
                         <CopyToClipboard text={TooltipsUncontrolledSource}
                            onCopy={() => this.setState({copied: true})}>
