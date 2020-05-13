@@ -1,11 +1,13 @@
 import React, { Fragment } from "react";
-import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
-
+import { Card, CardBody, CardTitle, Row, Col, Tooltip, Button } from "reactstrap";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 //Prism
 // eslint-disable-next-line
 import Prism from "prismjs"; //Include JS
 import "prismjs/themes/prism-okaidia.css"; //Include CSS
 import { PrismCode } from "react-prism"; //Prism Component
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import { UncontrolledTooltip } from "reactstrap";
 
 // import classnames from "classnames";
 import CustomTabs from "../../../components/tabs/customTabs";
@@ -13,8 +15,8 @@ import ContentHeader from "../../../components/contentHead/contentHeader";
 import ContentSubHeader from "../../../components/contentHead/contentSubHeader";
 
 // Import examples
-import TooltipsDefault from "./examples/tooltips";
-import TooltipsUncontrolled from "./examples/tooltipsUncontrolled";
+import {TooltipMulti} from 'react-sonata-components-library'
+import {TooltipUncontrolled} from 'react-sonata-components-library'
 
 // Import Example Source Code
 import TooltipsDefaultSource from "./exampleSource/tooltips";
@@ -30,9 +32,18 @@ class TooltipExampleMulti extends React.Component {
                <Col sm="12">
                   <Card>
                      <CardBody>
+                     <LiveProvider
+                        code={TooltipsDefaultSource}
+                        scope={{
+                           TooltipMulti, Tooltip, Button
+                        }}
+                     >
                         <CardTitle>Tooltips</CardTitle>
-                        <CustomTabs
-                           TabContent1={<TooltipsDefault />}
+                        <Col md="12" lg="6" className="leftDiv">
+                        <LiveError />
+                        <LivePreview />
+                        {/* <CustomTabs
+                           TabContent1={<TooltipMulti />}
                            TabContent2={
                               <PrismCode
                                  component="pre"
@@ -41,7 +52,22 @@ class TooltipExampleMulti extends React.Component {
                                  {TooltipsDefaultSource}
                               </PrismCode>
                            }
-                        />
+                        /> */}
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                        <CopyToClipboard text={TooltipsDefaultSource}
+                           onCopy={() => this.setState({copied: true})}>
+                           <span className="copy-code">Copy Code</span>
+                        </CopyToClipboard>
+                        {/* <PrismCode
+                           component="pre"
+                           className="language-javascript"
+                        >
+                           {MediaObjectSource}
+                        </PrismCode> */}
+                        <LiveEditor style={{ background: "#272822" }} />
+                     </Col>
+                          </LiveProvider>
                      </CardBody>
                   </Card>
                </Col>
@@ -51,9 +77,18 @@ class TooltipExampleMulti extends React.Component {
                <Col sm="12">
                   <Card>
                      <CardBody>
-                        <CardTitle>Alerts</CardTitle>
-                        <CustomTabs
-                           TabContent1={<TooltipsUncontrolled />}
+                     <LiveProvider
+                        code={TooltipsUncontrolledSource}
+                        scope={{
+                           TooltipUncontrolled, UncontrolledTooltip 
+                        }}
+                     >
+                        <CardTitle>UncontrolledTooltip</CardTitle>
+                        <Col md="12" lg="6" className="leftDiv">
+                        <LiveError />
+                        <LivePreview />
+                        {/* <CustomTabs
+                           TabContent1={ <TooltipUncontrolled />}
                            TabContent2={
                               <PrismCode
                                  component="pre"
@@ -62,7 +97,22 @@ class TooltipExampleMulti extends React.Component {
                                  {TooltipsUncontrolledSource}
                               </PrismCode>
                            }
-                        />
+                        /> */}
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                        <CopyToClipboard text={TooltipsUncontrolledSource}
+                           onCopy={() => this.setState({copied: true})}>
+                           <span className="copy-code">Copy Code</span>
+                        </CopyToClipboard>
+                        {/* <PrismCode
+                           component="pre"
+                           className="language-javascript"
+                        >
+                           {MediaObjectSource}
+                        </PrismCode> */}
+                        <LiveEditor style={{ background: "#272822" }} />
+                     </Col>
+                          </LiveProvider>
                      </CardBody>
                   </Card>
                </Col>
