@@ -1,30 +1,34 @@
-const TooltipsUncontrolledSource = `import React from "react";
-import { UncontrolledTooltip } from "reactstrap";
+const TooltipsUncontrolledSource = `
+//import React from "react";
+//import { UncontrolledTooltip } from "reactstrap";
 
-function TooltipUncontrolled() {
-   return (
-      <div>
+class TooltipUncontrolled extends React.Component {
+
+   render() {
+      const id = Math.random().toString(36).substr(2, 9)
+      return (
+         <div>
          <p>
-            Somewhere in here is a{" "}
             <span
-               style={{ textDecoration: "underline", color: "blue" }}
+               className="btn-link"
                href="#"
-               id="UncontrolledTooltipExample"
+               id="tooltip-0"
             >
-               tooltip
+               Hover Me
             </span>
             .
          </p>
          <UncontrolledTooltip
             placement="right"
-            target="UncontrolledTooltipExample"
+            target="tooltip-0"
          >
-            Hello world!
+            you hovered on me
          </UncontrolledTooltip>
       </div>
-   );
-}
-
-export default TooltipUncontrolled;`;
+      );
+   }
+}`;
 
 export default TooltipsUncontrolledSource;
+
+
