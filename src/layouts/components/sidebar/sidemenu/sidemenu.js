@@ -137,6 +137,11 @@ class SideMenuContent extends Component {
           >
             <span className="menu-item-text">Tooltips</span>
           </NavLink>
+
+          <NavLink to="/components/extra/switches" className="item" activeclassname="active">
+                        <span className="menu-item-text">Switches</span>
+                     </NavLink>
+                     
           {/*<SideMenu toggleSidebarMenu={this.props.toggleSidebarMenu}>
                   <SideMenu.MenuMultiItems
                      name="Bootstrap"
