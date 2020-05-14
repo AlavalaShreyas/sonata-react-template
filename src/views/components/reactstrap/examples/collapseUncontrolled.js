@@ -1,21 +1,24 @@
 import React from 'react';
 import { UncontrolledCollapse, Button, CardBody, Card } from 'reactstrap';
 
-const CollapseUncontrolled = () => (
-  <div>
-    <Button color="primary" id="toggler" style={{ marginBottom: '1rem' }}>
-      Toggle
-    </Button>
-    <UncontrolledCollapse toggler="#toggler">
-      <Card>
-        <CardBody>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt magni, voluptas debitis
-          similique porro a molestias consequuntur earum odio officiis natus, amet hic, iste sed
-          dignissimos esse fuga! Minus, alias.
-        </CardBody>
-      </Card>
-    </UncontrolledCollapse>
-  </div>
-);
-
-export default CollapseUncontrolled;
+const UncontrolledCollapseComponent = ({
+  color = "primary",
+  buttonText = "Toggle",
+  cardText = "This is uncontrolled collapse component example"
+}) => {
+  return(
+    <div>
+      <Button color={color} id="toggler" style={{ marginBottom: '1rem' }}>
+        {buttonText}
+      </Button>
+      <UncontrolledCollapse toggler="#toggler">
+        <Card>
+          <CardBody>
+            {cardText}
+          </CardBody>
+        </Card>
+      </UncontrolledCollapse>
+    </div>
+  );
+};
+export default UncontrolledCollapseComponent;

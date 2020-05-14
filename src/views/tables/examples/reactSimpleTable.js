@@ -1,65 +1,31 @@
-import React from "react";
-// To create random data
-import { makeData } from "../utils";
-// Import React Table
-import ReactTable from "react-table";
+import React, { Component } from "react";
+import { getData } from "../utils";
+import { Table } from "react-sonata-components-library";
+
 import "react-table/react-table.css";
 
-export default class Example extends React.Component {
-   constructor() {
-      super();
-      this.state = {
-         data: makeData()
-      };
-   }
-   render() {
-      const { data } = this.state;
-      return (
-         <div>
-            <ReactTable
-               data={data}
-               columns={[
-                  {
-                     Header: "Name",
-                     columns: [
-                        {
-                           Header: "First Name",
-                           accessor: "firstName"
-                        },
-                        {
-                           Header: "Last Name",
-                           id: "lastName",
-                           accessor: d => d.lastName
-                        }
-                     ]
-                  },
-                  {
-                     Header: "Info",
-                     columns: [
-                        {
-                           Header: "Age",
-                           accessor: "age"
-                        },
-                        {
-                           Header: "Status",
-                           accessor: "status"
-                        }
-                     ]
-                  },
-                  {
-                     Header: "Stats",
-                     columns: [
-                        {
-                           Header: "Visits",
-                           accessor: "visits"
-                        }
-                     ]
-                  }
-               ]}
-               defaultPageSize={10}
-               className="-striped -highlight"
-            />
-         </div>
-      );
-   }
+const columns = [
+  {
+    Header: "Employee Data",
+    columns: [
+      { Header: "First Name", accessor: "firstName" },
+      { Header: "Last Name", accessor: "lastName" },
+      { Header: "Hobby", accessor: "hobby" },
+      { Header: "Status", accessor: "status" },
+      { Header: "Salary", accessor: "salary" },
+    ],
+  },
+];
+export default class ReactTable extends React.Component {
+  constructor() {
+    super();
+    this.state = {};
+  }
+  render() {
+    return (
+      <div>
+        <Table data={getData()} columns={columns} pageSize={5} />
+      </div>
+    );
+  }
 }
