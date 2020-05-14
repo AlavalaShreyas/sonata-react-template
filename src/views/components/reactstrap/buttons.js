@@ -13,6 +13,7 @@ import ButtonsSquareSource from "./exampleSource/buttonsSquare";
 import ButtonsRoundSource from "./exampleSource/buttonsRound";
 import ButtonsSizingSource from "./exampleSource/buttonsSizing";
 import ButtonsGradientSource from "./exampleSource/buttonsGradient";
+import CollapseDefaultSource from "./exampleSource/collapse";
 
 import { ButtonDefault } from "react-sonata-components-library";
 import { ButtonGradient }from "react-sonata-components-library";
@@ -20,6 +21,9 @@ import { ButtonSizing } from "react-sonata-components-library";
 import { ButtonSquare } from "react-sonata-components-library";
 import { ButtonIcon } from "react-sonata-components-library";
 import { ButtonRound } from "react-sonata-components-library";
+
+import { CollapseComponent } from "react-sonata-components-library";
+
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
@@ -280,6 +284,47 @@ class buttons extends Component {
                               <span className="copy-code">Copy Code</span>
                            </CopyToClipboard>
                            <LiveEditor style={{ background: "#272822" }}/>
+                        </Col>
+                        </LiveProvider>
+                     </CardBody>
+                  </Card>
+               </Col>
+
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        <LiveProvider
+                        code={CollapseDefaultSource}
+                        scope={{CollapseComponent}}
+                        >
+                        <CardTitle>Collapse Component Design</CardTitle>
+                        
+                        <Col md="12" lg="6" className="leftDiv">
+                        <LiveError />
+                        <LivePreview />
+                           <div className="">
+                              <div className="installation">Installation</div>
+                        
+                              <Col md="12" className="leftDiv">
+                                 <div className="installation-steps">
+                                    <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                    <div className="installation-box">npm install --save react-sonata-components-library</div>
+                                    <div className="installation-box">
+                            import {"{ CollapseComponent }"} from
+                            "react-sonata-components-library";
+                          </div>
+                                 </div>
+                              </Col>
+                           </div>
+
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={CollapseDefaultSource}
+                              onCopy={() => this.setState({copied: true})}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                              <LiveEditor style={{ background: "#272822" }} />
+                           
                         </Col>
                         </LiveProvider>
                      </CardBody>
