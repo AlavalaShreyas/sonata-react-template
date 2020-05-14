@@ -2,24 +2,24 @@
 import React, { Component } from "react";
 
 import {
-   Home,
-   Mail,
-   MessageSquare,
-   ChevronRight,
-   Aperture,
-   Box,
-   Edit,
-   Grid,
-   Layers,
-   Sliders,
-   Map,
-   BarChart2,
-   Calendar,
-   Copy,
-   Book,
-   CheckSquare,
-   LifeBuoy,
-   Users
+  Home,
+  Mail,
+  MessageSquare,
+  ChevronRight,
+  Aperture,
+  Box,
+  Edit,
+  Grid,
+  Layers,
+  Sliders,
+  Map,
+  BarChart2,
+  Calendar,
+  Copy,
+  Book,
+  CheckSquare,
+  LifeBuoy,
+  Users,
 } from "react-feather";
 import { NavLink } from "react-router-dom";
 
@@ -29,62 +29,120 @@ import "../../../../assets/scss/components/sidebar/sidemenu/sidemenu.scss";
 import SideMenu from "../sidemenuHelper";
 
 class SideMenuContent extends Component {
-   render() {
-      return (
-         <SideMenu className="sidebar-content" toggleSidebarMenu={this.props.toggleSidebarMenu}>
-            <SideMenu.MenuMultiItems
-               name="Dashboard"
-               Icon={<Home size={18} />}
-               ArrowRight={<ChevronRight size={16} />}
-               collapsedSidebar={this.props.collapsedSidebar}
-            >
-               <NavLink to="/" exact className="item" activeclassname="active">
-                  <span className="menu-item-text">eCommerce</span>
-               </NavLink>
-               <NavLink to="/analytics-dashboard" exact className="item" activeclassname="active">
-                  <span className="menu-item-text">Analytics</span>
-               </NavLink>
-               <NavLink to="/sales-dashboard" exact className="item" activeclassname="active">
-                  <span className="menu-item-text">Sales</span>
-               </NavLink>
-            </SideMenu.MenuMultiItems>
-            <SideMenu.MenuMultiItems
-               name="Components"
-               Icon={<Box size={18} />}
-               ArrowRight={<ChevronRight size={16} />}
-               collapsedSidebar={this.props.collapsedSidebar}
-            >
-                     <NavLink to="/components/bootstrap/buttons" className="item" activeclassname="active">
-                        <span className="menu-item-text">Buttons</span>
-                     </NavLink>
-                     <NavLink to="/components/bootstrap/tabs" className="item" activeclassname="active">
-                        <span className="menu-item-text">Tabs</span>
-                     </NavLink>
-                     <NavLink to="/components/bootstrap/media-objects" className="item" activeclassname="active">
-                        <span className="menu-item-text">Media Objects</span>
-                     </NavLink>
-                     <NavLink to="/components/bootstrap/modals" className="item" activeclassname="active">
-                        <span className="menu-item-text">Modals</span>
-                     </NavLink>
-                     <NavLink to="/components/extra/select" className="item" activeclassname="active">
-                        <span className="menu-item-text">Select</span>
-                     </NavLink>
-                     <NavLink to="/components/extra/drag-and-drop" className="item" activeclassname="active">
-                        <span className="menu-item-text">Drag and Drop</span>
-                     </NavLink>
-                     <NavLink to="/components/extra/toastr" className="item" activeclassname="active">
-                        <span className="menu-item-text">Toastr</span>
-                     </NavLink> 
-                     <NavLink to="/components/extra/spinner" className="item" activeclassname="active">
-                        <span className="menu-item-text">Spinner</span>
-                     </NavLink>
-                     <NavLink to="/components/bootstrap/tooltips" className="item" activeclassname="active">
-                        <span className="menu-item-text">Tooltips</span>
-                     </NavLink>
-                     <NavLink to="/components/extra/switches" className="item" activeclassname="active">
+  render() {
+    return (
+      <SideMenu
+        className="sidebar-content"
+        toggleSidebarMenu={this.props.toggleSidebarMenu}
+      >
+        <SideMenu.MenuMultiItems
+          name="Dashboard"
+          Icon={<Home size={18} />}
+          ArrowRight={<ChevronRight size={16} />}
+          collapsedSidebar={this.props.collapsedSidebar}
+        >
+          <NavLink to="/" exact className="item" activeclassname="active">
+            <span className="menu-item-text">eCommerce</span>
+          </NavLink>
+          <NavLink
+            to="/analytics-dashboard"
+            exact
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Analytics</span>
+          </NavLink>
+          <NavLink
+            to="/sales-dashboard"
+            exact
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Sales</span>
+          </NavLink>
+        </SideMenu.MenuMultiItems>
+        <SideMenu.MenuMultiItems
+          name="Components"
+          Icon={<Box size={18} />}
+          ArrowRight={<ChevronRight size={16} />}
+          collapsedSidebar={this.props.collapsedSidebar}
+        >
+          <NavLink
+            to="/components/bootstrap/buttons"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Buttons</span>
+          </NavLink>
+          <NavLink
+            to="/components/bootstrap/tabs"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Tabs</span>
+          </NavLink>
+          <NavLink
+            to="/components/bootstrap/media-objects"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Media Objects</span>
+          </NavLink>
+          <NavLink
+            to="/components/bootstrap/modals"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Modals</span>
+          </NavLink>
+          <NavLink
+            to="/components/bootstrap/carousel"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Carousel</span>
+          </NavLink>
+          <NavLink
+            to="/components/extra/select"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Select</span>
+          </NavLink>
+          <NavLink
+            to="/components/extra/drag-and-drop"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Drag and Drop</span>
+          </NavLink>
+          <NavLink
+            to="/components/extra/toastr"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Toastr</span>
+          </NavLink>
+          <NavLink
+            to="/components/extra/spinner"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Spinner</span>
+          </NavLink>
+          <NavLink
+            to="/components/bootstrap/tooltips"
+            className="item"
+            activeclassname="active"
+          >
+            <span className="menu-item-text">Tooltips</span>
+          </NavLink>
+
+          <NavLink to="/components/extra/switches" className="item" activeclassname="active">
                         <span className="menu-item-text">Switches</span>
                      </NavLink>
-               {/*<SideMenu toggleSidebarMenu={this.props.toggleSidebarMenu}>
+                     
+          {/*<SideMenu toggleSidebarMenu={this.props.toggleSidebarMenu}>
                   <SideMenu.MenuMultiItems
                      name="Bootstrap"
                      ArrowRight={<ChevronRight size={16} />}
@@ -178,88 +236,130 @@ class SideMenuContent extends Component {
                      </NavLink>
                   </SideMenu.MenuMultiItems> 
                </SideMenu>*/}
-            </SideMenu.MenuMultiItems>
+        </SideMenu.MenuMultiItems>
+        <SideMenu.MenuMultiItems
+          name="OtherComponents"
+          Icon={<Box size={18} />}
+          ArrowRight={<ChevronRight size={16} />}
+          collapsedSidebar={this.props.collapsedSidebar}
+        >
+          <SideMenu toggleSidebarMenu={this.props.toggleSidebarMenu}>
             <SideMenu.MenuMultiItems
-               name="OtherComponents"
-               Icon={<Box size={18} />}
-               ArrowRight={<ChevronRight size={16} />}
-               collapsedSidebar={this.props.collapsedSidebar}
+              name="React Tables"
+              ArrowRight={<ChevronRight size={16} />}
+              collapsedSidebar={this.props.collapsedSidebar}
             >
-               
-               <SideMenu toggleSidebarMenu={this.props.toggleSidebarMenu}>
-                 
-                  <SideMenu.MenuMultiItems
-                     name="React Tables"
-                     ArrowRight={<ChevronRight size={16} />}
-                     collapsedSidebar={this.props.collapsedSidebar}
-                  >
-                     {/* <NavLink to="/react-tables/regular" className="item" activeclassname="active">
+              {/* <NavLink to="/react-tables/regular" className="item" activeclassname="active">
                         <span className="menu-item-text">Regular</span>
                      </NavLink> */}
-                     <NavLink to="/react-tables/extended" className="item" activeclassname="active">
-                        <span className="menu-item-text">React Tables</span>
-                     </NavLink>
-                  </SideMenu.MenuMultiItems>   
-                  <SideMenu.MenuMultiItems
-                     name="Charts"
-                     ArrowRight={<ChevronRight size={16} />}
-                     collapsedSidebar={this.props.collapsedSidebar}
-                  >
-                     <NavLink to="/charts/chartjs" className="item" activeclassname="active">
-                        <span className="menu-item-text">ChartJS</span>
-                     </NavLink>
-                     <NavLink to="/charts/chartist" className="item" activeclassname="active">
-                        <span className="menu-item-text">ChartistJS</span>
-                     </NavLink>
-                  </SideMenu.MenuMultiItems>     
-                  <SideMenu.MenuMultiItems
-                     name="Forms"
-                     ArrowRight={<ChevronRight size={16} />}
-                     collapsedSidebar={this.props.collapsedSidebar}
-                  >
-                     <NavLink to="/forms/validation" className="item" activeclassname="active">
-                        <span className="menu-item-text">Validation</span>
-                     </NavLink>
-                     <NavLink to="/forms/layouts/basic-forms" className="item" activeclassname="active">
-                        <span className="menu-item-text">Basic Form</span>
-                     </NavLink>
-                  </SideMenu.MenuMultiItems> 
-                  <SideMenu.MenuMultiItems
-                     name="Pages"
-                     ArrowRight={<ChevronRight size={16} />}
-                     collapsedSidebar={this.props.collapsedSidebar}
-                  >
-                     <NavLink to="/pages/user-profile" className="item" activeclassname="active">
-                        <span className="menu-item-text">User Profile</span>
-                     </NavLink>
-                     <NavLink to="/pages/horizontal-timeline" className="item" activeclassname="active">
-                        <span className="menu-item-text">Horizontal Timeline</span>
-                     </NavLink>
-                     <NavLink to="/pages/vertical-timeline" className="item" activeclassname="active">
-                        <span className="menu-item-text">Vertical Timeline</span>
-                     </NavLink>                     
-                     <NavLink to="/pages/login" className="item" activeclassname="active">
-                        <span className="menu-item-text">Login</span>
-                     </NavLink>
-                     <NavLink to="/pages/register" className="item" activeclassname="active">
-                        <span className="menu-item-text">Register</span>
-                     </NavLink>
-                     <NavLink to="/pages/forgot-password" className="item" activeclassname="active">
-                        <span className="menu-item-text">Forgot Password</span>
-                     </NavLink>
-                     <NavLink to="/email" activeclassname="active">                        
-                        <span className="menu-item-text">Email</span>
-                     </NavLink>
-                     <NavLink to="/chat" activeClassName="active">                        
-                        <span className="menu-item-text">Chat</span>
-                     </NavLink>
-                     <NavLink to="/contacts" activeclassname="active">                        
-                        <span className="menu-item-text">Contacts</span>
-                     </NavLink>
-                     <NavLink to="/todo" activeclassname="active">                       
-                       <span className="menu-item-text">Todo</span>
-                    </NavLink>
-                    {/* <NavLink to="/pages/faq" className="item" activeclassname="active">
+              <NavLink
+                to="/react-tables/extended"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">React Tables</span>
+              </NavLink>
+            </SideMenu.MenuMultiItems>
+            <SideMenu.MenuMultiItems
+              name="Charts"
+              ArrowRight={<ChevronRight size={16} />}
+              collapsedSidebar={this.props.collapsedSidebar}
+            >
+              <NavLink
+                to="/charts/chartjs"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">ChartJS</span>
+              </NavLink>
+              <NavLink
+                to="/charts/chartist"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">ChartistJS</span>
+              </NavLink>
+            </SideMenu.MenuMultiItems>
+            <SideMenu.MenuMultiItems
+              name="Forms"
+              ArrowRight={<ChevronRight size={16} />}
+              collapsedSidebar={this.props.collapsedSidebar}
+            >
+              <NavLink
+                to="/forms/validation"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Validation</span>
+              </NavLink>
+              <NavLink
+                to="/forms/layouts/basic-forms"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Basic Form</span>
+              </NavLink>
+            </SideMenu.MenuMultiItems>
+            <SideMenu.MenuMultiItems
+              name="Pages"
+              ArrowRight={<ChevronRight size={16} />}
+              collapsedSidebar={this.props.collapsedSidebar}
+            >
+              <NavLink
+                to="/pages/user-profile"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">User Profile</span>
+              </NavLink>
+              <NavLink
+                to="/pages/horizontal-timeline"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Horizontal Timeline</span>
+              </NavLink>
+              <NavLink
+                to="/pages/vertical-timeline"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Vertical Timeline</span>
+              </NavLink>
+              <NavLink
+                to="/pages/login"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Login</span>
+              </NavLink>
+              <NavLink
+                to="/pages/register"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Register</span>
+              </NavLink>
+              <NavLink
+                to="/pages/forgot-password"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Forgot Password</span>
+              </NavLink>
+              <NavLink to="/email" activeclassname="active">
+                <span className="menu-item-text">Email</span>
+              </NavLink>
+              <NavLink to="/chat" activeClassName="active">
+                <span className="menu-item-text">Chat</span>
+              </NavLink>
+              <NavLink to="/contacts" activeclassname="active">
+                <span className="menu-item-text">Contacts</span>
+              </NavLink>
+              <NavLink to="/todo" activeclassname="active">
+                <span className="menu-item-text">Todo</span>
+              </NavLink>
+              {/* <NavLink to="/pages/faq" className="item" activeclassname="active">
                         <span className="menu-item-text">FAQ</span>
                      </NavLink>
                      <NavLink to="/pages/knowledge-base" className="item" activeclassname="active">
@@ -274,7 +374,7 @@ class SideMenuContent extends Component {
                      <NavLink to="/pages/blank-page" className="item" activeclassname="active">
                         <span className="menu-item-text">Blank Page</span>
                      </NavLink> */}
-                     {/* <NavLink to="/pages/lockscreen" className="item" activeclassname="active">
+              {/* <NavLink to="/pages/lockscreen" className="item" activeclassname="active">
                         <span className="menu-item-text">Lock Screen</span>
                      </NavLink>
                      <NavLink to="/pages/error" className="item" activeclassname="active">
@@ -283,14 +383,13 @@ class SideMenuContent extends Component {
                      <NavLink to="/pages/maintenance" className="item" activeclassname="active">
                         <span className="menu-item-text">Maintenance</span>
                      </NavLink> */}
-                     
-                  </SideMenu.MenuMultiItems>
-                  <SideMenu.MenuMultiItems
-                     name="Cards"
-                     ArrowRight={<ChevronRight size={16} />}
-                     collapsedSidebar={this.props.collapsedSidebar}
-                  >
-                     {/* <NavLink to="/cards/basic-card" className="item" activeclassname="active">
+            </SideMenu.MenuMultiItems>
+            <SideMenu.MenuMultiItems
+              name="Cards"
+              ArrowRight={<ChevronRight size={16} />}
+              collapsedSidebar={this.props.collapsedSidebar}
+            >
+              {/* <NavLink to="/cards/basic-card" className="item" activeclassname="active">
                         <span className="menu-item-text">Basic Cards</span>
                      </NavLink>
                      <NavLink to="/cards/extended-card" className="item" activeclassname="active">
@@ -299,11 +398,15 @@ class SideMenuContent extends Component {
                      <NavLink to="/cards/statistic-card" className="item" activeclassname="active">
                         <span className="menu-item-text">Statistic Cards</span>
                      </NavLink> */}
-                     <NavLink to="/cards/advanced-card" className="item" activeclassname="active">
-                        <span className="menu-item-text">Advanced Cards</span>
-                     </NavLink>
-                  </SideMenu.MenuMultiItems>
-                  {/* <SideMenu.MenuSingleItem>
+              <NavLink
+                to="/cards/advanced-card"
+                className="item"
+                activeclassname="active"
+              >
+                <span className="menu-item-text">Advanced Cards</span>
+              </NavLink>
+            </SideMenu.MenuMultiItems>
+            {/* <SideMenu.MenuSingleItem>
                      <NavLink to="/email" activeclassname="active">
                         
                         <span className="menu-item-text">Email</span>
@@ -327,9 +430,9 @@ class SideMenuContent extends Component {
                         <span className="menu-item-text">Todo</span>
                      </NavLink>
                   </SideMenu.MenuSingleItem>                 */}
-               </SideMenu>
-            </SideMenu.MenuMultiItems>
-            {/* <SideMenu.MenuSingleItem badgeColor="danger" badgeText="6">
+          </SideMenu>
+        </SideMenu.MenuMultiItems>
+        {/* <SideMenu.MenuSingleItem badgeColor="danger" badgeText="6">
                <NavLink to="/email" activeclassname="active">
                   <i className="menu-icon">
                      <Mail size={18} />
@@ -713,9 +816,9 @@ class SideMenuContent extends Component {
                   <span className="menu-item-text">Support</span>
                </a>
             </SideMenu.MenuSingleItem> */}
-         </SideMenu>
-      );
-   }
+      </SideMenu>
+    );
+  }
 }
 
 export default SideMenuContent;
