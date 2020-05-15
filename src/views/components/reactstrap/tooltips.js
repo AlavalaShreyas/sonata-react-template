@@ -54,7 +54,7 @@ class TooltipExampleMulti extends React.Component {
                                  npm install --save react-sonata-components-library
                               </div>
                               <div className="installation-box">
-                                 import {"{ MediaDescription }"} from
+                                 import {"{ TooltipMulti }"} from
                                  "react-sonata-components-library";
                               </div>
                               </div>
@@ -106,7 +106,7 @@ class TooltipExampleMulti extends React.Component {
                                  npm install --save react-sonata-components-library
                               </div>
                               <div className="installation-box">
-                                 import {"{ MediaDescription }"} from
+                                 import {"{ TooltipUncontrolled }"} from
                                  "react-sonata-components-library";
                               </div>
                               </div>

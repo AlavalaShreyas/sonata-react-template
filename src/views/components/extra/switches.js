@@ -43,193 +43,63 @@ import CustomClassnameSource from "./exampleSource/switchCustomClassname";
 import CustomIconSource from "./exampleSource/switchCustomIcon";
 import NoIconSource from "./exampleSource/switchNoIcon";
 
+//New Sonata Library Implementaion
+import {Switch} from 'react-sonata-components-library';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 
 class Switches extends Component {
    render() {
       return (
          <Fragment>
             <ContentHeader>Switches</ContentHeader>
-            <ContentSubHeader>
-               <p>Elegant, accessible toggle component for React.</p>
-               <a href="https://github.com/aaronshaf/react-toggle" target="_blank" rel="noopener noreferrer">
-                  <img src="https://img.shields.io/github/stars/aaronshaf/react-toggle.svg?style=social" alt="Stars" />
-                  <img src="https://img.shields.io/npm/dm/react-toggle.svg" alt="Downloads"/>
-               </a>
-            </ContentSubHeader>
             <Row>
-               <Col sm="12" md="6">
+               <Col md="12" lg="12">
                   <Card>
                      <CardBody>
-                        <CardTitle>Wrapper label tag</CardTitle>
-                        <CustomTabs
-                           TabContent1={<WrapperLabel />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {WrapperLabelSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Adjacent label tag</CardTitle>
-                        <CustomTabs
-                           TabContent1={<AdjacentLabel />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {AdjacentLabelSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-            </Row>
+                     <LiveProvider
+                        code={NoIconSource}
+                        scope={{
+                           Switch,
+                        }}
+                     >
+                  <Col md="12" lg="6" className="leftDiv">
+                    <LivePreview />
+                    <LiveError />
+                    <div className="">
+                      <div className="installation">Installation</div>
+                      <Col md="12" className="leftDiv">
+                        <div className="installation-steps">
+                          <div className="installation-text">
+                            Download and install the package. Use Node.js v8.0.0
+                            or later.
+                          </div>
+                          <div className="installation-box">
+                            npm install --save react-sonata-components-library
+                          </div>
+                          <div className="installation-box">
+                            import {"{ Switch }"} from
+                            "react-sonata-components-library";
+                          </div>
+                        </div>
+                      </Col>
+                    </div>
+                  </Col>
+                  <Col md="12" lg="6" className="rightDiv">
+                    <CopyToClipboard
+                      text={NoIconSource}
+                      onCopy={() => this.setState({ copied: true })}
+                    >
+                      <span className="copy-code">Copy Code</span>
+                    </CopyToClipboard>
 
-            <Row>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>No label tag</CardTitle>
-                        <CustomTabs
-                           TabContent1={<NoLabel />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {NoLabelSource}
-                              </PrismCode>
-                           }
-                        />
+                    <LiveEditor style={{ background: "#272822" }} />
+                  </Col>
+                </LiveProvider>
+                        
                      </CardBody>
                   </Card>
-               </Col>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Using form data</CardTitle>
-                        <CustomTabs
-                           TabContent1={<FormData />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {FormDataSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-            </Row>
-
-            <Row>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Controlled Component</CardTitle>
-                        <CustomTabs
-                           TabContent1={<Controlled />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {ControlledSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Disabled</CardTitle>
-                        <CustomTabs
-                           TabContent1={<Disbaled />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {DisbaledSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-            </Row>
-
-            <Row>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Custom className</CardTitle>
-                        <CustomTabs
-                           TabContent1={<CustomClassname />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {CustomClassnameSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Custom icons</CardTitle>
-                        <CustomTabs
-                           TabContent1={<CustomIcon />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {CustomIconSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-            </Row>
-            <Row>
-               <Col sm="12" md="6">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>No icons</CardTitle>
-                        <CustomTabs
-                           TabContent1={<NoIcon />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {NoIconSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
+               </Col>               
             </Row>
          </Fragment>
       );

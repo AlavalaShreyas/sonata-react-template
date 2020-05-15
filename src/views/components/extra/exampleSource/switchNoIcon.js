@@ -1,32 +1,23 @@
-const NoIconSource = `import React, { Component } from "react";
-import Toggle from "react-toggle";
-
-class NoIcon extends Component {
-   state = {
-      tofuIsReady: false,
-   };
-
+const NoIconSource = `class NoIcon extends React.Component {
    render() {
       return (
-         <form ref="breakfastForm">
-
-            {/* No icons */}
-
-            <div className="example">
-               <label>
-                  <Toggle
-                     defaultChecked={this.state.tofuIsReady}
-                     icons={false}
-                     onChange={this.handleTofuChange}
-                  />
-                  <span className="label-text">No icons</span>
-               </label>
-            </div>
-         </form>
+         <div>
+            <Switch
+               id="customSwitch1"
+               type="switch" 
+               label="Turn on this custom switch"
+               name="customSwitch1" 
+               disabled={false}
+            />
+            <Switch
+               id="customSwitch2"
+               type="switch" 
+               label="Disabled custom switch"
+               disabled={true}
+            />
+         </div>
       );
    }
-}
-export default NoIcon;
-`;
+}`;
 
 export default NoIconSource;
