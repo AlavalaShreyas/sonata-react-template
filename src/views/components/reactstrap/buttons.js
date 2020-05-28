@@ -36,9 +36,9 @@ import { ButtonRound } from "react-sonata-components-library";
 import { ButtonRadio as ButtonsRadio } from "react-sonata-components-library";
 import { ButtonCheckbox } from "react-sonata-components-library";
 import { ButtonsDropdown as Dropdown } from "react-sonata-components-library";
+import { ButtonsGroup } from "react-sonata-components-library";
 
 import BtnRadioExample from "./examples/buttonRadio";
-import ButtonsGroup from "./examples/buttonsGroup";
 
 import { CollapseComponent } from "react-sonata-components-library";
 
