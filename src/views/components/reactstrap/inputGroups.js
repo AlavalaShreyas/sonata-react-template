@@ -13,7 +13,7 @@ import ContentHeader from "../../../components/contentHead/contentHeader";
 import ContentSubHeader from "../../../components/contentHead/contentSubHeader";
 
 // Import examples
-import InputGroup from "./examples/inputGroup";
+import InputBoxExample from "./examples/inputGroup";
 import InputGroupAddons from "./examples/inputGroupAddons";
 import InputGroupAddonSizing from "./examples/inputGroupAddonSizing";
 import InputGroupButtons from "./examples/inputGroupButtons";
@@ -24,95 +24,64 @@ import InputGroupAddonsSource from "./exampleSource/inputGroupAddons";
 import InputGroupAddonSizingSource from "./exampleSource/inputGroupAddonSizing";
 import InputGroupButtonsSource from "./exampleSource/inputGroupButtons";
 
+////New Sonata Library Implementaion
+import {InputBox} from 'react-sonata-components-library';
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import {CopyToClipboard} from 'react-copy-to-clipboard';
+
 class inputGroup extends Component {
 
    render() {
       return (
          <Fragment>
-            <ContentHeader>Input Group</ContentHeader>
-            <ContentSubHeader>Input Group React Component.</ContentSubHeader>
+            <ContentHeader>InputBox</ContentHeader>
             <Row>
-               <Col sm="12">
+               <Col md="12" lg="12">
                   <Card>
                      <CardBody>
-                        <CardTitle>Input Group</CardTitle>
-                        <CustomTabs
-                           TabContent1={<InputGroup />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {InputGroupSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-            </Row>
+                     <LiveProvider
+                        code={InputGroupSource}
+                        scope={{
+                           InputBox,
+                        }}
+                     >
+                  <Col md="12" lg="6" className="leftDiv">
+                    <LivePreview />
+                    <LiveError />
+                    <div className="">
+                      <div className="installation">Installation</div>
+                      <Col md="12" className="leftDiv">
+                        <div className="installation-steps">
+                          <div className="installation-text">
+                            Download and install the package. Use Node.js v8.0.0
+                            or later.
+                          </div>
+                          <div className="installation-box">
+                            npm install --save react-sonata-components-library
+                          </div>
+                          <div className="installation-box">
+                            import {"{ InputBox }"} from
+                            "react-sonata-components-library";
+                          </div>
+                        </div>
+                      </Col>
+                    </div>
+                  </Col>
+                  <Col md="12" lg="6" className="rightDiv">
+                    <CopyToClipboard
+                      text={InputGroupSource}
+                      onCopy={() => this.setState({ copied: true })}
+                    >
+                      <span className="copy-code">Copy Code</span>
+                    </CopyToClipboard>
 
-            <Row>
-               <Col sm="12">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Addons</CardTitle>
-                        <CustomTabs
-                           TabContent1={<InputGroupAddons />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {InputGroupAddonsSource}
-                              </PrismCode>
-                           }
-                        />
+                    <LiveEditor style={{ background: "#272822" }} />
+                  </Col>
+                </LiveProvider>
+                        
                      </CardBody>
                   </Card>
-               </Col>
-            </Row>
-
-            <Row>
-               <Col sm="12">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Addon Sizing</CardTitle>
-                        <CustomTabs
-                           TabContent1={<InputGroupAddonSizing />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {InputGroupAddonSizingSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
-            </Row>
-
-            <Row>
-               <Col sm="12">
-                  <Card>
-                     <CardBody>
-                        <CardTitle>Buttons / Dropdowns</CardTitle>
-                        <CustomTabs
-                           TabContent1={<InputGroupButtons />}
-                           TabContent2={
-                              <PrismCode
-                                 component="pre"
-                                 className="language-javascript"
-                              >
-                                 {InputGroupButtonsSource}
-                              </PrismCode>
-                           }
-                        />
-                     </CardBody>
-                  </Card>
-               </Col>
+               </Col>               
             </Row>
          </Fragment>
       );
