@@ -1,49 +1,35 @@
-import React, { Component } from "react";
-import { Button, ButtonGroup } from "reactstrap";
+import React, { useState } from 'react';
+import { Button, ButtonGroup } from 'reactstrap';
 
-class ButtonsCheckbox extends Component {
-   state = { cSelected: [] };
+const ButtonCheckbox = (props) => {
+  const [cSelected, setCSelected] = useState([]);
+  const { checkboxes,color } = props;
+  const onCheckboxBtnClick = (selected) => {
+    const index = cSelected.indexOf(selected);
+    if (index < 0) {
+      cSelected.push(selected);
+    } else {
+      cSelected.splice(index, 1);
+    }
+    setCSelected([...cSelected]);
+  };
+  return (
+    <div>
+      <ButtonGroup>
+        {checkboxes.length ? checkboxes.map((name, index) =>(
+          <Button 
+            color={color} 
+            onClick={() => onCheckboxBtnClick(index)} 
+            active={cSelected.includes(index)}
+            key={index}
+          >
+            {name}
+          </Button>
+        )) : null}
+      </ButtonGroup>
+    </div>
+  );
+};
 
-   onCheckboxBtnClick = selected => {
-      const index = this.state.cSelected.indexOf(selected);
-      if (index < 0) {
-         this.state.cSelected.push(selected);
-      } else {
-         this.state.cSelected.splice(index, 1);
-      }
-      this.setState({ cSelected: [...this.state.cSelected] });
-   };
+export default ButtonCheckbox;
 
-   render() {
-      return (
-         <div>
-            <ButtonGroup>
-               <Button
-                  color="primary"
-                  onClick={() => this.onCheckboxBtnClick(1)}
-                  active={this.state.cSelected.includes(1)}
-               >
-                  One
-               </Button>
-               <Button
-                  color="primary"
-                  onClick={() => this.onCheckboxBtnClick(2)}
-                  active={this.state.cSelected.includes(2)}
-               >
-                  Two
-               </Button>
-               <Button
-                  color="primary"
-                  onClick={() => this.onCheckboxBtnClick(3)}
-                  active={this.state.cSelected.includes(3)}
-               >
-                  Three
-               </Button>
-            </ButtonGroup>
-            <p>Selected: {JSON.stringify(this.state.cSelected)}</p>
-         </div>
-      );
-   }
-}
-
-export default ButtonsCheckbox;

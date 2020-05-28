@@ -1,43 +1,34 @@
 import React, { Component } from "react";
-import { Button, ButtonGroup } from "reactstrap";
+import { ButtonRadio as ButtonsRadio} from "react-sonata-components-library";
 
-class ButtonsRadio extends Component {
-   state = { rSelected: [] };
-
-   onRadioBtnClick = (rSelected) => {
-      this.setState({ rSelected });
-   }
-
+class ButtonRadio extends Component {
+   constructor() {
+      super()
+      this.state = {
+         activeButton: 1
+      };
+      this.toggle=this.toggle.bind(this);
+    }
+   toggle(radioButton){
+      if (this.state.activeButton !== radioButton) {
+         this.setState({
+          activeButton: radioButton
+         });
+      }
+   };
+   
    render() {
       return (
          <div>
-            <ButtonGroup>
-               <Button
-                  color="primary"
-                  onClick={() => this.onRadioBtnClick(1)}
-                  active={this.state.rSelected === 1}
-               >
-                  One
-               </Button>
-               <Button
-                  color="primary"
-                  onClick={() => this.onRadioBtnClick(2)}
-                  active={this.state.rSelected === 2}
-               >
-                  Two
-               </Button>
-               <Button
-                  color="primary"
-                  onClick={() => this.onRadioBtnClick(3)}
-                  active={this.state.rSelected === 3}
-               >
-                  Three
-               </Button>
-            </ButtonGroup>
-            <p>Selected: {this.state.rSelected}</p>
-         </div>
+          <ButtonsRadio
+          radios = {["Cricket", "Badminton", "Chess"]}
+          activeButton = {this.state.activeButton}
+          toggle = {this.toggle}
+          color = "primary"
+          />  
+          </div>  
       );
    }
 }
 
-export default ButtonsRadio;
+export default ButtonRadio;

@@ -1,6 +1,14 @@
 import React, { Component, Fragment } from "react";
 import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
+import classnames from "classnames";
+import { Button, ButtonGroup } from "reactstrap";
+import {
+   ButtonDropdown,
+   DropdownToggle,
+   DropdownMenu,
+   DropdownItem
+ } from "reactstrap";
 //Prism
 // eslint-disable-next-line
 import Prism from "prismjs";  //Include JS
@@ -14,6 +22,10 @@ import ButtonsRoundSource from "./exampleSource/buttonsRound";
 import ButtonsSizingSource from "./exampleSource/buttonsSizing";
 import ButtonsGradientSource from "./exampleSource/buttonsGradient";
 import CollapseDefaultSource from "./exampleSource/collapse";
+import ButtonsRadioSource from "./exampleSource/buttonRadio";
+import ButtonsDropdownSource from "./exampleSource/buttonsDropdown";
+import ButtonsGroupSource from "./exampleSource/buttonsGroup";
+import ButtonsCheckboxSource from "./exampleSource/buttonsCheckbox";
 
 import { ButtonDefault } from "react-sonata-components-library";
 import { ButtonGradient }from "react-sonata-components-library";
@@ -21,13 +33,33 @@ import { ButtonSizing } from "react-sonata-components-library";
 import { ButtonSquare } from "react-sonata-components-library";
 import { ButtonIcon } from "react-sonata-components-library";
 import { ButtonRound } from "react-sonata-components-library";
+import { ButtonRadio as ButtonsRadio } from "react-sonata-components-library";
+import { ButtonCheckbox } from "react-sonata-components-library";
+import { ButtonsDropdown as Dropdown } from "react-sonata-components-library";
+
+import BtnRadioExample from "./examples/buttonRadio";
+import ButtonsGroup from "./examples/buttonsGroup";
 
 import { CollapseComponent } from "react-sonata-components-library";
 
-
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
-
+const radioButtonCode = ButtonsRadioSource;
+const radioButtonScope = {
+   ButtonsRadio,
+   classnames,
+   Button, 
+   ButtonGroup,
+   BtnRadioExample
+}
+const dropdownButtonCode = ButtonsDropdownSource;
+const dropdownButtonScope = {
+   Dropdown,
+   ButtonDropdown,
+   DropdownToggle,
+   DropdownMenu,
+   DropdownItem
+}
 class buttons extends Component {
    state = {
       value: '',
@@ -280,6 +312,167 @@ class buttons extends Component {
                         </Col>
                         <Col md="12" lg="6" className="rightDiv">
                            <CopyToClipboard text={ButtonsSquareSource}
+                              onCopy={() => this.setState({copied: true})}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                           <LiveEditor style={{ background: "#272822" }}/>
+                        </Col>
+                        </LiveProvider>
+                     </CardBody>
+                  </Card>
+               </Col>
+
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        
+                <LiveProvider
+                  code={radioButtonCode}
+                  scope={radioButtonScope}>
+                        <CardTitle>Button Radio Design</CardTitle>
+                        
+                        <Col md="12" lg="6" className="leftDiv">
+                           <LiveError/>
+                           <LivePreview/>
+                           <div className="">
+                              <div className="installation">Installation</div>
+                        
+                              <Col md="12" className="leftDiv">
+                                 <div className="installation-steps">
+                                    <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                    <div className="installation-box">npm install --save react-sonata-components-library</div>
+                                    <div className="installation-box">
+                            import ButtonRadio from
+                            "react-sonata-components-library";
+                          </div>
+                                 </div>
+                              </Col>
+                           </div>
+
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={radioButtonCode}
+                              onCopy={() => this.setState({copied: true})}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                           <LiveEditor style={{ background: "#272822" }}/>
+                        </Col>
+                        </LiveProvider>
+                     </CardBody>
+                  </Card>
+               </Col>
+
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        <LiveProvider
+                        code={ButtonsCheckboxSource}
+                        scope={{ButtonCheckbox}}
+                        >
+                        <CardTitle>Button Checkbox Design</CardTitle>
+                        
+                        <Col md="12" lg="6" className="leftDiv">
+                        <LiveError />
+                        <LivePreview />
+                           <div className="">
+                              <div className="installation">Installation</div>
+                        
+                              <Col md="12" className="leftDiv">
+                                 <div className="installation-steps">
+                                    <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                    <div className="installation-box">npm install --save react-sonata-components-library</div>
+                                    <div className="installation-box">
+                            import {"{ ButtonCheckbox }"} from
+                            "react-sonata-components-library";
+                          </div>
+                                 </div>
+                              </Col>
+                           </div>
+
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={ButtonsCheckboxSource}
+                              onCopy={() => this.setState({copied: true})}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                              <LiveEditor style={{ background: "#272822" }} />
+                           
+                        </Col>
+                        </LiveProvider>
+                     </CardBody>
+                  </Card>
+               </Col>
+
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        
+                <LiveProvider
+                  code={ButtonsGroupSource}
+                  scope={{ButtonsGroup}}>
+                        <CardTitle>Button Group Design</CardTitle>
+                        
+                        <Col md="12" lg="6" className="leftDiv">
+                           <LiveError/>
+                           <LivePreview/>
+                           <div className="">
+                              <div className="installation">Installation</div>
+                        
+                              <Col md="12" className="leftDiv">
+                                 <div className="installation-steps">
+                                    <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                    <div className="installation-box">npm install --save react-sonata-components-library</div>
+                                    <div className="installation-box">
+                            import {"{ButtonsGroup}"} from
+                            "react-sonata-components-library";
+                          </div>
+                                 </div>
+                              </Col>
+                           </div>
+
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={ButtonsGroupSource}
+                              onCopy={() => this.setState({copied: true})}>
+                              <span className="copy-code">Copy Code</span>
+                           </CopyToClipboard>
+                           <LiveEditor style={{ background: "#272822" }}/>
+                        </Col>
+                        </LiveProvider>
+                     </CardBody>
+                  </Card>
+               </Col>
+
+               <Col sm="12">
+                  <Card>
+                     <CardBody>
+                        
+                <LiveProvider
+                  code={dropdownButtonCode}
+                  scope={dropdownButtonScope}>
+                        <CardTitle>Button Dropdown Design</CardTitle>
+                        
+                        <Col md="12" lg="6" className="leftDiv">
+                           <LiveError/>
+                           <LivePreview/>
+                           <div className="">
+                              <div className="installation">Installation</div>
+                        
+                              <Col md="12" className="leftDiv">
+                                 <div className="installation-steps">
+                                    <div className="installation-text">Download and install the package. Use Node.js v8.0.0 or later.</div>
+                                    <div className="installation-box">npm install --save react-sonata-components-library</div>
+                                    <div className="installation-box">
+                            import {"{ButtonsDropdown}"} from
+                            "react-sonata-components-library";
+                          </div>
+                                 </div>
+                              </Col>
+                           </div>
+
+                        </Col>
+                        <Col md="12" lg="6" className="rightDiv">
+                           <CopyToClipboard text={dropdownButtonCode}
                               onCopy={() => this.setState({copied: true})}>
                               <span className="copy-code">Copy Code</span>
                            </CopyToClipboard>
