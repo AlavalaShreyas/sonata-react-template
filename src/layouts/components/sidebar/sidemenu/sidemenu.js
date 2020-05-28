@@ -144,6 +144,13 @@ class SideMenuContent extends Component {
          <NavLink to="/components/bootstrap/input-groups" className="item" activeclassname="active">
                         <span className="menu-item-text">InputBox</span>
          </NavLink> 
+		  <NavLink 
+			  to="/components/extra/comment" 
+			  className="item" 
+			  activeclassname="active"
+		  >
+           <span className="menu-item-text">CommentBox</span>
+          </NavLink>
                      
           {/*<SideMenu toggleSidebarMenu={this.props.toggleSidebarMenu}>
                   <SideMenu.MenuMultiItems
