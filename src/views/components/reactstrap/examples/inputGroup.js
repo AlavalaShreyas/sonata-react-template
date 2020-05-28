@@ -1,51 +1,21 @@
-import React from "react";
-import { InputGroup, InputGroupAddon, InputGroupText, Input } from "reactstrap";
+import React, { Component } from "react";
+import {InputBox} from 'react-sonata-components-library';
 
-const InputGroupExample = props => {
-   return (
-      <div>
-         <InputGroup>
-            <InputGroupAddon addonType="prepend">@</InputGroupAddon>
-            <Input placeholder="username" />
-         </InputGroup>
-         <br />
-         <InputGroup>
-            <InputGroupAddon addonType="prepend">
-               <InputGroupText>
-                  <Input
-                     addon
-                     type="checkbox"
-                     aria-label="Checkbox for following text input"
-                  />
-               </InputGroupText>
-            </InputGroupAddon>
-            <Input placeholder="Check it out" />
-         </InputGroup>
-         <br />
-         <InputGroup>
-            <Input placeholder="username" />
-            <InputGroupAddon addonType="append">@example.com</InputGroupAddon>
-         </InputGroup>
-         <br />
-         <InputGroup>
-            <InputGroupAddon addonType="prepend">
-               <InputGroupText>$</InputGroupText>
-               <InputGroupText>$</InputGroupText>
-            </InputGroupAddon>
-            <Input placeholder="Dolla dolla billz yo!" />
-            <InputGroupAddon addonType="append">
-               <InputGroupText>$</InputGroupText>
-               <InputGroupText>$</InputGroupText>
-            </InputGroupAddon>
-         </InputGroup>
-         <br />
-         <InputGroup>
-            <InputGroupAddon addonType="prepend">$</InputGroupAddon>
-            <Input placeholder="Amount" type="number" step="1" />
-            <InputGroupAddon addonType="append">.00</InputGroupAddon>
-         </InputGroup>
-      </div>
-   );
-};
+class InputBoxExample extends Component {
+   render() {
+      return (
+         <InputBox
+        id="exampleEmail"
+        type="email" 
+        name="email" 
+        placeholder="placeholder"
+        bsSize="sm"
+        valid= {true}
+        invalid={false}
+        disabled={false}
+    />
+      );
+   }
+}
 
-export default InputGroupExample;
+export default InputBoxExample;
