@@ -1,36 +1,15 @@
 import React from "react";
-import {
-   ButtonDropdown,
-   DropdownToggle,
-   DropdownMenu,
-   DropdownItem
-} from "reactstrap";
+import { ButtonsDropdown as Dropdown } from "react-sonata-components-library";
 
 class ButtonsDropdown extends React.Component {
-   state = {
-      dropdownOpen: false
-   };
 
-   toggle = () => {
-      this.setState({
-         dropdownOpen: !this.state.dropdownOpen
-      });
-   };
-
-   render() {
-      return (
-         <ButtonDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
-            <DropdownToggle caret className="btn-danger">Button Dropdown</DropdownToggle>
-            <DropdownMenu>
-               <DropdownItem header>Header</DropdownItem>
-               <DropdownItem disabled>Action</DropdownItem>
-               <DropdownItem>Another Action</DropdownItem>
-               <DropdownItem divider />
-               <DropdownItem>Another Action</DropdownItem>
-            </DropdownMenu>
-         </ButtonDropdown>
-      );
-   }
-}
-
+    render() {
+    return (
+<Dropdown 
+dropdownValues={["Cricket","Badminton","Football"]} 
+color="primary" 
+value="Select an Option"/>
+    );
+  }
+};
 export default ButtonsDropdown;
