@@ -1,46 +1,36 @@
 import React from "react";
-import Tooltip from "rc-tooltip";
-import Slider, { Range } from "rc-slider";
+import Slider from 'react-rangeslider';
+import 'react-rangeslider/lib/index.css';
 
-import "rc-slider/assets/index.css";
-
-const Handle = Slider.Handle;
-
-const handle = props => {
-   const { value, dragging, index, ...restProps } = props;
-   return (
-      <Tooltip
-         prefixCls="rc-slider-tooltip"
-         overlay={value}
-         visible={dragging}
-         placement="top"
-         key={index}
-      >
-         <Handle value={value} {...restProps} />
-      </Tooltip>
-   );
+class Sliders extends React.Component {
+  constructor (props) {
+    super(props);
+    const {value,min,max,labels,orientation} = props;
+    this.state = {
+      value: this.props.value
+    };
+  }
+        
+  handleChange(value){
+    this.setState({
+      value: value
+    });
+  };
+    
+  render () {
+    return (
+      <Slider
+        min={this.props.min}
+        max={this.props.max}
+        value={this.state.value}
+        onChange={this.handleChange.bind(this)}
+        tooltip={true}
+        labels={this.props.labels}
+        orientation={this.props.orientation}
+      />
+    );
+  }
 };
 
-const wrapperStyle = { width: 400, margin: 50 };
+export default Sliders;
 
-const RCSlider = props => {
-   return (
-      <div>
-         <div style={wrapperStyle}>
-            <p>Slider with custom handle</p>
-            <Slider min={0} max={20} defaultValue={3} handle={handle} />
-         </div>
-         <div style={wrapperStyle}>
-            <p>Range with custom handle</p>
-            <Range
-               min={0}
-               max={20}
-               defaultValue={[3, 10]}
-               tipFormatter={value => `${value}%`}
-            />
-         </div>
-      </div>
-   );
-};
-
-export default RCSlider;
