@@ -22,6 +22,7 @@
     "react": "^16.13.1",
     "react-beautiful-dnd": "^9.0.2",
     "react-big-calendar": "^0.19.2",
+    "react-calendar": "^3.1.0",
     "react-chartist": "^0.13.1",
     "react-chartjs-2": "^2.7.4",
     "react-copy-to-clipboard": "^5.0.1",
@@ -32,13 +33,16 @@
     "react-dropzone": "^5.0.1",
     "react-feather": "^1.1.1",
     "react-horizontal-timeline": "^1.5.3",
+    "react-live": "^2.2.2",
     "react-perfect-scrollbar": "^1.1.1",
     "react-prism": "^4.3.2",
+    "react-rangeslider": "^2.2.0",
     "react-redux": "^5.0.7",
     "react-redux-toastr": "^7.4.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.1",
     "react-select": "^2.0.0",
+    "react-sonata-components-library": "^1.0.7",
     "react-spinners": "^0.4.7",
     "react-stepzilla": "^4.7.2",
     "react-swipeable-views": "^0.12.16",
@@ -51,9 +55,7 @@
     "redux-thunk": "^2.3.0",
     "simple-line-icons": "^2.4.1",
     "uuid": "^3.3.2",
-    "yup": "^0.26.6",
-    "react-live": "^2.2.2",
-    "react-sonata-components-library": "1.0.6"
+    "yup": "^0.26.6"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -71,6 +73,6 @@
     "not op_mini all"
   ],
   "devDependencies": {
-    "node-sass": "^4.13.1"
+    "node-sass": "^4.14.1"
   }
 }
