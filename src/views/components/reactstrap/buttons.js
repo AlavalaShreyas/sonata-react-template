@@ -1,13 +1,18 @@
 import React, { Component, Fragment } from "react";
-import { Card, CardBody, CardTitle, Row, Col } from "reactstrap";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import classnames from "classnames";
-import { Button, ButtonGroup } from "reactstrap";
 import {
    ButtonDropdown,
    DropdownToggle,
    DropdownMenu,
-   DropdownItem
+   DropdownItem,
+   Button, 
+   ButtonGroup,
+   Card,
+   CardBody, 
+   CardTitle, 
+   Row, 
+   Col
  } from "reactstrap";
 //Prism
 // eslint-disable-next-line
@@ -27,20 +32,20 @@ import ButtonsDropdownSource from "./exampleSource/buttonsDropdown";
 import ButtonsGroupSource from "./exampleSource/buttonsGroup";
 import ButtonsCheckboxSource from "./exampleSource/buttonsCheckbox";
 
-import { ButtonDefault } from "react-sonata-components-library";
-import { ButtonGradient }from "react-sonata-components-library";
-import { ButtonSizing } from "react-sonata-components-library";
-import { ButtonSquare } from "react-sonata-components-library";
-import { ButtonIcon } from "react-sonata-components-library";
-import { ButtonRound } from "react-sonata-components-library";
-import { ButtonRadio as ButtonsRadio } from "react-sonata-components-library";
-import { ButtonCheckbox } from "react-sonata-components-library";
-import { ButtonsDropdown as Dropdown } from "react-sonata-components-library";
-import { ButtonsGroup } from "react-sonata-components-library";
+import { ButtonDefault, 
+         ButtonGradient, 
+         ButtonSizing, 
+         ButtonSquare, 
+         ButtonIcon, 
+         ButtonRound, 
+         ButtonsGroup,
+         ButtonCheckbox,
+         ButtonRadio as ButtonsRadio,
+         ButtonsDropdown as Dropdown,
+         CollapseComponent
+ } from "react-sonata-components-library";
 
 import BtnRadioExample from "./examples/buttonRadio";
-
-import { CollapseComponent } from "react-sonata-components-library";
 
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
 
