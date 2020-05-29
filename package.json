@@ -52,8 +52,10 @@
     "simple-line-icons": "^2.4.1",
     "uuid": "^3.3.2",
     "yup": "^0.26.6",
+    "react-calendar": "^3.1.0",
+    "react-rangeslider": "^2.2.0",
     "react-live": "^2.2.2",
-    "react-sonata-components-library": "1.0.6"
+    "react-sonata-components-library": "1.0.7"
   },
   "scripts": {
     "start": "react-scripts start",
