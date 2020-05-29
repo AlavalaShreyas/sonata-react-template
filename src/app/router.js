@@ -131,6 +131,8 @@ const LazyLogin = lazy(() => import("../views/pages/login"));
 const LazyRegister = lazy(() => import("../views/pages/register"));
 const LazySpinner = lazy(() => import("../views/components/extra/spinner"));
 const LazyCommentBox = lazy(() => import("../views/components/extra/comment"));
+const LazyAvatars = lazy(() => import("../views/components/extra/avatars"));
+
 // Full Layout
 // const LazyForgotPassword = lazy(() => import("../views/pages/forgotPassword"));
 // const LazyLogin = lazy(() => import("../views/pages/login"));
@@ -409,6 +411,15 @@ class Router extends Component {
             render={(matchprops) => (
               <Suspense fallback={<Spinner />}>
                 <LazyTooltips {...matchprops} />
+              </Suspense>
+            )}
+          />
+           <MainLayoutRoutes
+            exact
+            path="/components/extra/avatars"
+            render={(matchprops) => (
+              <Suspense fallback={<Spinner />}>
+                <LazyAvatars {...matchprops} />
               </Suspense>
             )}
           />
