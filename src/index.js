@@ -1,4 +1,4 @@
-// import external modules
+// import external modules testing
 import React, { Suspense, lazy } from "react";
 import ReactDOM from "react-dom";
 import { Provider } from "react-redux";
